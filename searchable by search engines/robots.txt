@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: https://kys4548.netlify.com/sitemap.xml

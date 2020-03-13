@@ -1,0 +1,27 @@
+WAS(Web Application Server)에서 웹어플리케이션을 구분하기 위한 path이다.
+
+이클립스와 톰캣을 연동하여 사용할 때, 자동으로 server.xml에 추가된다.
+
+ 
+
+
+
+server.xml 내부코드 
+
+
+
+각각의 프로젝트를 구분하기 위함
+
+
+
+후에 Context Path 용어가 자주 나올텐데 해당 웹어플리케이션의 이름이구나! 생각하면 된다.
+
+
+
+
+
+
+
+출처 : 신입SW인력을 위한 실전 JSP Servlet 동영상과정 - 제 05강 Servlet 본격적으로 살펴보기-I   
+
+https://www.youtube.com/watch?v=6D1hOSyHJTg&list=PLYBmkgNU_x7Zj0nCzt5D0qV33C_rU1NK2&index=5

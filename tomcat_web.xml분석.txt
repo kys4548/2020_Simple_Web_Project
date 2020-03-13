@@ -1,0 +1,73 @@
+tomcat의 conf/web.xml과 다른 여러 web application안의 WEB-INF/web.xml는 약간 다르다.
+
+
+
+conf/web.xml에는 웹어플리케이션에 꼭 필요한 web-app라는 디스크립터를 정의하고 있다.
+
+또 모든 web application의 web.xml 내용을 담고 있다. (모든 웹 어플리케이션 web.xml의 default option)
+
+
+
+각각 어플리케이션에 관한 설정은 해당 어플리케이션 web.xml문서에 가서 설정을 하도록 되어있다.
+
+
+
+
+
+servlet 컨테이너인 카타리나 servlet
+
+
+
+
+jsp 컨테이너인 제스퍼 servlet
+
+
+
+
+servlet 맵핑 과정
+
+
+
+
+
+톰캣의 기본적인 세션 유지시간 (30분)
+
+
+
+
+
+확장자 매핑
+
+<mime-mapping>
+
+</mime-mapping>
+
+
+
+
+
+시작페이지 설정
+
+
+
+
+
+
+
+위의 설정들이 web-app 디스크립터에 정의되어있다.
+
+기본적으로 conf/web.xml은 설정을 건드리지 않고 각각의 어플리케이션에서 WEB-INF/web.xml을 변경하여 쓴다.
+
+
+
+
+
+
+
+참고 
+
+
+
+https://www.youtube.com/watch?v=DFBJ7r1u0Jo&list=PLQUXE_kb6KOj0mvxoAGrz3FT9EDL3fa1z&index=5
+
+톰켓 알고쓰기(총 11강 완) 중 4강

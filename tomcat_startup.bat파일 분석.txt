@@ -1,0 +1,183 @@
+
+bin폴더는 Tomcat 실행에 필요한 실행파일들이 들어있다.
+
+sh는 리눅스에서 사용가능한 쉘 스크립트 파일이고 bat은 윈도우에서 사용가능한 배치파일이다.
+
+
+
+주석을 제외하고 startup.bat명령어를 천천히 살펴보자.
+
+
+
+
+
+@echo off
+
+앞으로 칠 명령어들이 cmd창에 나오지 않도록 한다. 결과값만 보기좋게 출력하기 위한 명령어
+
+@echo off를 하지 않으면 밑의 모든 명령어가 cmd창에 나타난다. 
+
+setlocal
+
+﻿지역변수를 설정하기 위한 명령어 setlocal 명령어 뒤에 설정한 변수는 해당 배치파일이 끝나면 사라진다. 
+
+
+
+set "CURRENT_DIR=%cd%"
+
+%cd%의 결과값은 현재 디렉토리를 나타내고 그 값을 CURRENT_DIR에 대입한다. 
+
+startup.bat실행은 C:\Users\a\Desktop\project\apache-tomcat-9.0.21\bin에서 하므로
+
+현재 상황에서 CURRENT_DIR 변수는 C:\Users\a\Desktop\project\apache-tomcat-9.0.21\bin을 나타낸다.
+
+ 
+
+if not "%CATALINA_HOME%" == "" goto gotHome
+
+CATALINA_HOME 변수가 정해져 있다면 gotHome으로 이동하고 정해져 있지 않다면 아랫줄로 이동한다.
+
+현재 상황에서는 CATALINA_HOME변수가 정해져 있지 않으므로 아랫줄로 이동한다.
+
+set "CATALINA_HOME=%CURRENT_DIR%"
+
+CATALINA_HOME 변수에 CURRENT_DIR이 나타내는 값을 대입한다.
+
+현재 상황에서는 CATALINA_HOME변수가 C:\Users\a\Desktop\project\apache-tomcat-9.0.21\bin 나타낸다. 
+
+if exist "%CATALINA_HOME%\bin\catalina.bat" goto okHome
+
+%CATALINA_HOME%\bin\catalina.bat이 존재하면 okHome으로 이동하고 존재하지 않는다면 아랫줄로 이동한다.
+
+현재 상황에서는 C:\Users\a\Desktop\project\apache-tomcat-9.0.21\bin\bin\catalina.bat이고 bin이 두번 적용되는 해당 경로가 없으므로 아랫줄로 이동한다.
+
+ 
+
+cd ..
+
+현재 디렉토리에서 한단계 상위 디렉토리로 이동하는 명령어다.
+
+현재 디렉토리가 C:\Users\a\Desktop\project\apache-tomcat-9.0.21 로 변경되었다.
+
+set "CATALINA_HOME=%cd%"
+
+CATALINA_HOME 변수에 C:\Users\a\Desktop\project\apache-tomcat-9.0.21 가 대입되었다.
+
+cd "%CURRENT_DIR%"
+
+%CURRENT_DIR%이 나타내는 디렉토리로 이동한다.
+
+현재 디렉토리가 다시 C:\Users\a\Desktop\project\apache-tomcat-9.0.21\bin 로 변경되었다.
+
+:gotHome
+
+if exist "%CATALINA_HOME%\bin\catalina.bat" goto okHome
+
+%CATALINA_HOME%\bin\catalina.bat가 존재한다면 okHome로 이동하고 존재하지 않는다면 아랫줄로 이동한다.
+
+현재상황에서는 C:\Users\a\Desktop\project\apache-tomcat-9.0.21\bin\catalina.bat이고 해당 경로가 존재하므로 
+
+okHome으로 이동한다.
+
+echo The CATALINA_HOME environment variable is not defined correctly
+
+CATALINA_HOME 환경변수가 정의되지 않았다는 출력문
+
+디렉토리 구조가 이상하게 되어있거나 잘못 삭제한 경우 해당 명령문에 도달할 수 있겠다.
+
+echo This environment variable is needed to run this program
+
+해당 환경변수가 프로그램을 실행하는데 필요하다는 출력문
+
+goto end
+
+end로 이동하라는 명령문
+
+:okHome
+
+
+
+set "EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat"
+
+EXECUTABLE변수에 %CATALINA_HOME%\bin\catalina.bat 를 대입한다.
+
+현재 상황에서는 C:\Users\a\Desktop\project\apache-tomcat-9.0.21\bin\catalina.bat로 catalina.bat의 정확한 경로가 입력되었다.
+
+if exist "%EXECUTABLE%" goto okExec
+
+%EXECUTABLE%의 경로가 존재한다면 okExec로 이동하고 경로가 존재하지 않는다면 아랫줄로 이동한다.
+
+echo Cannot find "%EXECUTABLE%"
+
+실행할 catalina.bat파일을 찾을 수 없다는 출력문
+
+echo This file is needed to run this program
+
+해당 파일이 프로그램을 실행하는데 필요하다는 출력문
+
+goto end
+
+end로 이동하라는 명령문
+
+:okExec
+
+
+
+set CMD_LINE_ARGS=
+
+CMD_LINE_ARGS 변수에 아래의 명령문들 실행한 값을 대입한다.
+
+:setArgs
+
+if ""%1""=="""" goto doneSetArgs
+
+"%1"==""값이 같다면 doneSetArgs로 이동하고 아니면 아랫줄로 이동한다.
+
+%1은 bat 파일을 실행할 때 입력받은 첫번째 매개변수를 의미한다.
+
+현재 상황에서는 매개변수를 아무것도 주지않고 실행했으므로 바로 doneSetArgs로 이동한다.
+
+set CMD_LINE_ARGS=%CMD_LINE_ARGS% %1
+
+매개변수가 있었을 때 CMD_LINE_ARGS에 추가로 대입하여 준다.
+
+shift
+
+매개변수를 하나씩 왼쪽으로 옮긴다 ex) %2 -> %1 
+
+startup.bat파일을 실행할 떄 입력한 매개변수 갯수만큼 반복함으로써 처음 입력받은 매개변수 모두를 CMD_LINE_ARGS에 저장하는 것이다. 
+
+goto setArgs
+
+setAgrgs로 이동하라는 명령문
+
+:doneSetArgs
+
+
+
+call "%EXECUTABLE%" start %CMD_LINE_ARGS%
+
+%EXECUTABLE%를 실행하는데 %CMD_LINE_ARGS%를 매개변수로 가지면서 실행한다.
+
+:end
+
+종료
+
+
+
+
+
+
+
+bat파일을 볼줄 모르지만 한줄 한줄 이해하면서 분석을 해보았다.
+
+
+
+해당 bat파일을 간단하게 요약하면 tomcat을 실행하기 위한 catalina.bat이 있나 확인하는 과정을 거쳤고
+
+startup.bat파일을 실행할 때 입력받은 매개변수를 catalina.bat에 넘기면서 실행하는것이 전부였다.
+
+
+
+톰캣을 알아가는 과정에 도움이 될지는 모르겠지만 흥미로웠다.
+

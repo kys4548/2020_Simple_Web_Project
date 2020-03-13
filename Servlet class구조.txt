@@ -1,0 +1,87 @@
+우리가 만드는 Servlet 클래스는 항상 HttpServlet을 상속받는다.
+
+
+
+그 전체적인 구조를 보면 다음을 따른다.
+
+Servlet(Interface) -> GenericServlet(abstract) -> HttpServlet(GenericServlet 상속) -> 우리가 만든 Servlet 클래스(HttpServlet 상속)
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+잠깐 interface와 abstract에 대해 고민해 보자.
+
+Interface와 abstract의 차이점이 무엇인가? (중요)
+
+해당 질문은 네이버, 카카오같은 IT기업 면접을 봤을 때 항상 물어봤었다.
+
+
+
+나는 정확하게 알고 있지 못한다.
+
+
+
+사용목적에 따라 다르다정도만 알고 있다.
+
+interface는 여러 개발자가 같이 개발을 할 때 class와 메소드를 interface로 정의해놓고 그 내부 구조를 알고있지 않아도 해당 메소드를 호출하여 사용할 수 있어 각각 개발에 용이하다.
+
+
+
+또한 interface를 상속받은 class가 A, B가 있고 프로젝트에서 A를 B로 변경하여야 할 때,
+
+1. A a = new A(); -> B b = new B(); 
+
+2. interface inter = new A(); -> interface inter = new B();
+
+1번 방법을 쓰면 모든 a를 b로 바꿔주어야 하지만 2번 방법을 쓴다면 해당 코드부분만 바꿔주면 되는 장점이 있다.
+
+
+
+abstract는 IS-A 관계로 위의 예시에서는 HttpServlet은 GenericServlet에 포함관계를 나타낼 수 있다.
+
+
+
+글로 써내려가면 잘 할 수 있을거같지만 면접에 가면 아무것도 생각이 나질 않는 문제가 있으니 자동응답수준이 되어야 할 것이다.
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
+웹 브라우저에서 클라이언트에게 요청(Request)이 들어왔을 때 서버는 응답(Response)을 해준다.
+
+
+
+get방식이나 post방식으로 요청이 들어오면 doGet메소드나 doPost메소드가 실행되는데 그때 Tomcat이 doGet메소드와 doPost메소드에
+
+들어가는request, response객체를 생성해서 파라미터에 넣어준다.
+
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException();
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException();
+
+
+
+doGet메소드나 doPost메소드에서 클라이언트 사용자에게 응답을 보낼때는 html파일로 응답한다.
+
+따라서 메소드 안에 response.setContentType("text/html");를 넣어 html로 응답형식을 정해준다.
+
+
+
+Servlet파일은 HTML파일이 아닌 Java파일이기 때문에 반드시 content 타입을 지정해 주어야 한다.
+
+
+
+
+
+Get 방식 : URL값으로 정보가 전송되어 보안에 약함.
+
+Post방식 : header를 이용하여 정보가 전송되어 보안에 강함.
+
+
+
+
+
+출처 : 신입SW인력을 위한 실전 JSP Servlet 동영상과정 - 제 05강 Servlet 본격적으로 살펴보기-I
+
+https://www.youtube.com/watch?v=6D1hOSyHJTg&list=PLYBmkgNU_x7Zj0nCzt5D0qV33C_rU1NK2&index=5
