@@ -1,0 +1,41 @@
+자바는 객체지향 언어로써 new라는 키워드를 이용해서 클래스로부터 객체를 생성해 메모리에 로드하여 사용.
+
+
+
+스프링을 사용하면 applicationContext.xml같은 spring설정파일을 이용하여 객체를 생성하고 메모리에 로드한다.
+
+그 생성된 객체를 언제든지 getBean과 같은 메소드로 객체를 읽어올 수 있다.
+
+
+
+1. src/main/resources폴더 아래에 applicationContext.xml 파일을 만든다.
+
+
+
+2. Person.java class파일이 있을 때 applicationContext.xml파일에 해당 class를 bean으로 설정한다.
+
+   
+
+    <bean id="person" class="package/Person"/>
+
+
+
+3. Person class를 불러올 main.java 파일에서 컨테이너(ctx)를 생성한다.
+
+   이미 컨테이너에 person이란 bean이 생성되었기 때문에 내가 사용할 class를 직접 new로 instance를 생성하지 
+
+   않고 container가 관리하 는 bean을 가져온다.
+
+
+
+   GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
+
+   Person person = ctx.getBean("person", Person.class);
+
+
+
+
+
+GenericXmlApplicationContext는 SpringFramework에서 제공하는 클래스이므로
+
+pom.xml에 반드시 SpringFramework를 dependency해야 한다.

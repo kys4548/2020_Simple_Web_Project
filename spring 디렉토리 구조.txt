@@ -1,0 +1,77 @@
+Project (폴더)
+
+|
+
+| - src (폴더)
+
+|   |
+
+|   | - main (폴더)
+
+|        |
+
+|        | - java (폴더)
+
+|        | - resources (폴더)
+
+| 
+
+| - pom.xml ( xml파일)
+
+
+
+
+
+해당 디렉토리 구조를 직접 만들고 pom.xml에 아래와 같이 springframework와 maven설정을 해준다.
+
+각각 버전은 업데이트에 따라 다를 수 있다.
+
+maven 설정은 pom.xml파일에서 dependency하고 있는 라이브러리들을 해당 프로젝트에 포함 시킨다.
+
+
+
+
+
+
+
+​기초 작업을 마무리하고 나서 eclipse에 해당 프로젝트를 maven project로 import 해주면 자동으로 프로젝트 폴더에 여러가지 파일들을 생성해 준다.
+
+
+
+
+
+
+
+
+
+
+
+pom.xml에 의해  springframework의 jar파일들이 dependency된것을 볼 수 있다.
+
+pom.xml에서는 spring-context 하나만 dependency했지만 spring-context를 사용하기 위해 필요한 다른 jar파일들도 maven이 자동으로 project에 포함시켜주는것을 볼 수 있다.
+
+
+
+
+
+
+
+
+
+
+
+project를 import하면 기존에 있던 폴더와 pom.xml에는 변화가 없지만 여러 설정과 배포에 관련된 파일과 폴더들이 생성된다.
+
+
+
+eclipse를 통해 maven프로젝트를 생성한것과 일치한다.
+
+
+
+이제 src/java 폴더에 package를 구성하고 java 코드를 작성하면 된다.
+
+
+
+
+
+참고 : 인프런
