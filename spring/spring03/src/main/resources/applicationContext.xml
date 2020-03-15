@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+		
+		<!-- 객체만 생성하는 경우 -->
+		<bean id="normalBattery" class="spring03.battery.NormalBattery"></bean>
+		<bean id="chargeBattery" class="spring03.battery.ChargeBattery"></bean>
+		
+		
+		<!-- 생성자를 이용한 객체 주입  -->
+		<bean id="carToy" class="spring03.toy.CarToy">
+			<constructor-arg ref="normalBattery"></constructor-arg>
+		</bean>
+		
+		<!-- setter를 이용한 객체 주입 -->
+		<bean id="robotToy" class="spring03.toy.RobotToy">
+			<property name="battery" ref="normalBattery"></property>
+		</bean>
+		
+		<!-- List타입 의존 객체 주입 -->
+		<bean id="" class="">
+			<property name="">
+				<list>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+				</list>
+			</property>
+		</bean>
+		
+		
+		<!-- Map타입 의존 객체 주입 -->
+		<bean id="" class="">
+			<property name="">
+				<map>
+					<entry>
+						<key>
+							<value>key1</value>
+						</key>
+							<value>value1</value>
+					</entry>
+					<entry>
+						<key>
+							<value>key2</value>
+						</key>
+							<ref bean=""/>
+					</entry>
+				</map>
+			</property>
+		</bean>
+		
+		
+		
+</beans>
