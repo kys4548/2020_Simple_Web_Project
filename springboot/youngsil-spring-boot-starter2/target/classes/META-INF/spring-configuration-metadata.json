@@ -1,0 +1,23 @@
+{
+  "groups": [
+    {
+      "name": "coupleman",
+      "type": "me.youngsil.CouplemanProperties",
+      "sourceType": "me.youngsil.CouplemanProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "coupleman.how-long",
+      "type": "java.lang.Integer",
+      "sourceType": "me.youngsil.CouplemanProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "coupleman.name",
+      "type": "java.lang.String",
+      "sourceType": "me.youngsil.CouplemanProperties"
+    }
+  ],
+  "hints": []
+}

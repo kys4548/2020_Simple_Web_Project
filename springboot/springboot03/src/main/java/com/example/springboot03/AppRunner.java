@@ -57,8 +57,8 @@ public class AppRunner implements ApplicationRunner {
 
         applicationEventPublisher.publishEvent(new MyEvent(100,"new data"));
 
-        Resource resource1 = resourceLoader.getResource("classpath:/test1.txt");
-        Resource resource2 = resourceLoader.getResource("classpath:/test2.txt");
+        Resource resource1 = resourceLoader.getResource("classpath:test1.txt");
+        Resource resource2 = resourceLoader.getResource("classpath:test2.txt");
 
         System.out.println(resource1.exists());
         System.out.println(resource2.exists());
