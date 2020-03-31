@@ -119,7 +119,12 @@ public class EventControllerTest {
         this.mockMvc.perform(post("/api/events")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(this.objectMapper.writeValueAsString(eventDto)))
-                .andExpect(status().isBadRequest());
+                .andDo(print())
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$[2].objectName").exists())
+                .andExpect(jsonPath("$[2].defaultMessage").exists())
+                .andExpect(jsonPath("$[2].code").exists())
+                ;
     }
 
 }
