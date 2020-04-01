@@ -6,6 +6,79 @@
 
 	<!-- 반응형 웹을 만들기 위해 꼭 필요한 meta파일 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<style>
+		*{padding: 0;margin: 0;}
+		body{
+			background-color: pink
+		}
+		#wrapper{
+			border:1px solid gray;
+			width: 80%;
+			margin:0 auto;
+			font-size: 2vw;
+		}
+		nav li{
+			list-style: none;
+			float:left;	
+			border:1px solid gray;
+			width:20%;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		header h1{
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		nav ul{
+			overflow: hidden;
+		}
+		header{
+			padding:20px 0 0 0;
+			border:1px solid gray;
+		}
+		.content{
+			padding: 10px;
+		}
+		footer{
+			border:1px solid gray;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+		}
+		@media (max-width: 767px) {
+			body{
+				background-color: purple;
+			}
+			#wrapper{
+				width:100%;
+				font-size: 2em;
+			}
+			nav li{
+				width:100%;
+			}
+		}
+		@media (min-width: 768px) {
+			body{
+				background-color: orange;
+			}
+			#wrapper{
+				width:100%;
+			}
+		}
+		@media (min-width: 992px) {
+			body{
+				background-color: lightblue;
+			}
+			#wrapper{
+				width:80%;
+			}
+		}
+		@media (min-width: 1200px) {
+			body {
+				background-color: #0FEDBB
+			}
+		}
+	</style>
 </head>
 <body>
 	<div id="wrapper">
