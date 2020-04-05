@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5a122377-a3b7-4727-acd3-35d6e444cb46" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VSUZqvZMQpnSYoYiovcONW4lAr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a122377-a3b7-4727-acd3-35d6e444cb46" name="Default Changelist" comment="" />
+      <created>1577246048035</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577246048035</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1027" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1577247890091">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="1027" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1577247890091" />
+    <state x="664" y="173" key="Maven.ArtifactSearchDialog" timestamp="1577247150788">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="664" y="173" key="Maven.ArtifactSearchDialog/0.0.1600.860@0.0.1600.860" timestamp="1577247150788" />
+    <state x="884" y="181" key="search.everywhere.popup" timestamp="1577247241230">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="884" y="181" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1577247241230" />
+  </component>
+</project>
