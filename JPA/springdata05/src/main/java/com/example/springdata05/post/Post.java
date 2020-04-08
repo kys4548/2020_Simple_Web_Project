@@ -1,27 +1,18 @@
-package com.example.springdata02.Post;
-
-import org.springframework.data.domain.AbstractAggregateRoot;
+package com.example.springdata05.post;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Post extends AbstractAggregateRoot {
+public class Post {
 
     @Id @GeneratedValue
     private Long id;
 
     private String title;
 
-    @Lob
-    private String content;
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
-
-
-
-
 
     public Long getId() {
         return id;
@@ -39,24 +30,11 @@ public class Post extends AbstractAggregateRoot {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public Date getCreated() {
         return created;
     }
 
     public void setCreated(Date created) {
         this.created = created;
-    }
-
-    public Post publish() {
-        this.registerEvent(new PostPublishedEvent(this));
-        return this;
     }
 }
