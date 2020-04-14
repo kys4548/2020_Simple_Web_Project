@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -42,8 +43,8 @@ class PostRepositoryTest {
         assertThat(entityManager.contains(savedPost)).isTrue();
         assertThat(savedPost1 != post1);
 
-        post1.setTitle("change");
         savedPost1.setTitle("so o rmmmmmm");
+        post1.setTitle("change");
 
 
         List<Post> all = postRepository.findAll();
@@ -52,9 +53,7 @@ class PostRepositoryTest {
 
     @Test
     public void findByTitleStartsWith() {
-        Post post = new Post();
-        post.setTitle("Spring Data Jpa");
-        postRepository.save(post);
+        savePost();
 
         List<Post> all = postRepository.findByTitleStartsWith("Spring");
         assertThat(all.size()).isEqualTo(1);
@@ -62,11 +61,29 @@ class PostRepositoryTest {
 
     @Test
     public void findByTitle() {
-        Post post = new Post();
-        post.setTitle("Spring Data Jpa");
-        postRepository.save(post);
+        savePost();
 
         List<Post> all = postRepository.findByTitle("Spring");
         assertThat(all.size()).isEqualTo(1);
+    }
+
+    private Post savePost() {
+        Post post = new Post();
+        post.setTitle("Spring Data Jpa");
+        return postRepository.save(post);
+    }
+
+    @Test
+    public void updateTitle() {
+        Post spring = savePost();
+        spring.setTitle("hibernate");
+        List<Post> all = postRepository.findAll();
+        assertThat(all.get(0).getTitle()).isEqualTo("hibernate");
+
+//        int update = postRepository.updateTitle("hibernate", spring.getId());
+//        assertThat(update).isEqualTo(1);
+//
+//        Optional<Post> byId = postRepository.findById(spring.getId());
+//        assertThat(byId.get().getTitle()).isEqualTo("hibernate");
     }
 }
