@@ -17,7 +17,14 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member = em.find(Member.class, 5L);
+            Member member1 = new Member();
+            Member member2 = new Member();
+
+            em.persist(member1);
+            em.persist(member2);
+
+
+//            Member member = em.find(Member.class, 5L);
 //            em.persist(member);
 
 //            Member member = new Member();
