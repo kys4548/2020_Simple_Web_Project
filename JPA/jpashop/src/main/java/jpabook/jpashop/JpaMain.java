@@ -18,14 +18,24 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Order order = em.find(Order.class, 1L);
+            Member member = new Member();
+            em.persist(member);
+            member.setName("youngsil");
 
-            Long memberId = order.getMemberId();
-            Member member = em.find(Member.class, memberId);
+            em.flush();
+            em.clear();
 
-            Member findMember = order.getMember();
+            Member findMember = em.find(Member.class, 1L);
+            System.out.println("findMember = " + findMember.getName());
 
+            Order order = new Order();
+            em.persist(order);
 
+            em.flush();
+            em.clear();
+
+            Order findOrder = em.find(Order.class, 2L);
+            System.out.println("findOrder = " + findOrder.getMember().getName());
 
             tx.commit();
         } catch(Exception e) {
