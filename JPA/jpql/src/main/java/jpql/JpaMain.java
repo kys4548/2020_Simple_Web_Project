@@ -1,6 +1,7 @@
 package jpql;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 public class JpaMain {
@@ -13,25 +14,58 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Team team1 = new Team();
+            team1.setName("teamA");
+            em.persist(team1);
 
-            Member member = new Member();
-            member.setUsername("member1");
-            member.setAge(10);
-            em.persist(member);
+            Team team2 = new Team();
+            team2.setName("teamB");
+            em.persist(team2);
 
-            TypedQuery<Member> query = em.createQuery("select m from Member m", Member.class);
+            Team team3 = new Team();
+            team3.setName("teamC");
+            em.persist(team3);
 
-            List<Member> resultList = query.getResultList();
+            Member member1 = new Member();
+            member1.setUsername("member1");
+            member1.changeTeam(team1);
+            em.persist(member1);
 
-            for (Member member1 : resultList) {
-                System.out.println("member1 = " + member1);
+            Member member2 = new Member();
+            member2.setUsername("member2");
+            member2.changeTeam(team1);
+            em.persist(member2);
+
+            Member member3 = new Member();
+            member3.setUsername("member3");
+            member3.changeTeam(team2);
+            em.persist(member3);
+
+            Member member4 = new Member();
+            member4.setUsername("member4");
+            em.persist(member4);
+
+//            em.flush();
+//            em.clear();
+
+            //벌크 연산전에 flush가 일어난다.
+
+            int count = em.createQuery("update Member m set m.age = 20")
+                    .executeUpdate();
+
+            Team team = em.find(Team.class, team1.getId());
+            List<Member> members = team.getMembers();
+            for (Member member : members) {
+                System.out.println("member = " + member.getAge());
             }
 
-            TypedQuery<Member> query2 = em.createQuery("select m from Member m where m.id=10", Member.class);
-            Member singleResult = query2.getSingleResult();
+            em.clear();
 
-
-
+            Team team4 = em.find(Team.class, team1.getId());
+            List<Member> members1 = team4.getMembers();
+            for (Member member : members1) {
+                System.out.println("member = " + member.getAge());
+            }
             tx.commit();
         } catch(Exception e) {
             tx.rollback();
