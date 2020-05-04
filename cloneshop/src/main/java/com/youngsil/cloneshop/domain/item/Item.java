@@ -1,9 +1,7 @@
-package jpabook.jpashop.domain.item;
+package com.youngsil.cloneshop.domain.item;
 
-import jpabook.jpashop.domain.Category;
-import jpabook.jpashop.exception.NotEnoughStockException;
+import com.youngsil.cloneshop.domain.ItemCategory;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,7 +10,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
-@Getter @Setter
+@Getter
 public abstract class Item {
 
     @Id @GeneratedValue
@@ -20,22 +18,24 @@ public abstract class Item {
     private Long id;
 
     private String name;
+
+    @OneToMany(mappedBy = "item")
+    private List<ItemCategory> itemCategoryList = new ArrayList<>();
+
     private int price;
     private int stockQuantity;
 
-    @ManyToMany(mappedBy = "items")
-    private List<Category> categories = new ArrayList<>();
 
-    //==비지니스 로직==//
+    //== 비지니스 로직 ==//
     public void addStock(int quantity) {
-        this.stockQuantity += quantity;
+        stockQuantity += quantity;
     }
 
     public void removeStock(int quantity) {
-        int restStock = this.stockQuantity - quantity;
+        int restStock = stockQuantity - quantity;
         if(restStock < 0) {
-            throw new NotEnoughStockException("need more stock");
+            throw new IllegalStateException("재고가 부족합니다.");
         }
-        this.stockQuantity = restStock;
+        stockQuantity = restStock;
     }
 }
