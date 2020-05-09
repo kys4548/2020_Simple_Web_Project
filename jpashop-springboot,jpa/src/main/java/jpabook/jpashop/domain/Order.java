@@ -86,7 +86,7 @@ public class Order {
      */
     public int getTotalPrice() {
         return orderItems.stream()
-                .mapToInt(OrderItem::getTotalPrice)
+                .mapToInt(orderItem -> orderItem.getTotalPrice())
                 .sum();
 //        int totalPrice  = 0;
 //        for(OrderItem orderItem : orderItems) {

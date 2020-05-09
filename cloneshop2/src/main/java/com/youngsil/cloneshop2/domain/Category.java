@@ -14,6 +14,8 @@ public class Category {
     @Column(name = "category_id")
     private Long id;
 
+    private String name;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;

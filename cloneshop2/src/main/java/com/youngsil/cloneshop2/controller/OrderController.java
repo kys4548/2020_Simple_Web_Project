@@ -1,12 +1,12 @@
-package jpabook.jpashop.controller;
+package com.youngsil.cloneshop2.controller;
 
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.item.Item;
-import jpabook.jpashop.repository.OrderSearch;
-import jpabook.jpashop.service.ItemService;
-import jpabook.jpashop.service.MemberService;
-import jpabook.jpashop.service.OrderService;
+import com.youngsil.cloneshop2.domain.Member;
+import com.youngsil.cloneshop2.domain.Order;
+import com.youngsil.cloneshop2.domain.item.Item;
+import com.youngsil.cloneshop2.repository.OrderSearch;
+import com.youngsil.cloneshop2.service.ItemService;
+import com.youngsil.cloneshop2.service.MemberService;
+import com.youngsil.cloneshop2.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-public class OrderCtroller {
+public class OrderController {
 
     private final OrderService orderService;
     private final MemberService memberService;
@@ -24,21 +24,19 @@ public class OrderCtroller {
 
     @GetMapping("/order")
     public String createForm(Model model) {
-
         List<Member> members = memberService.findMembers();
         List<Item> items = itemService.findItems();
 
         model.addAttribute("members", members);
-        model.addAttribute("items",items);
+        model.addAttribute("items", items);
 
         return "order/orderForm";
     }
 
     @PostMapping("/order")
     public String order(@RequestParam("memberId") Long memberId,
-                        @RequestParam("itemId") Long itemId,
+                        @RequestParam("item_id") Long itemId,
                         @RequestParam("count") int count) {
-
         orderService.order(memberId, itemId, count);
         return "redirect:/orders";
     }
@@ -54,6 +52,7 @@ public class OrderCtroller {
     @PostMapping("/orders/{orderId}/cancel")
     public String cancelOrder(@PathVariable("orderId") Long orderId) {
         orderService.cancelOrder(orderId);
+
         return "redirect:/orders";
     }
 }

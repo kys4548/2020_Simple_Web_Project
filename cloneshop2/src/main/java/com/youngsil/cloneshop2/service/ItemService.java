@@ -1,5 +1,6 @@
 package com.youngsil.cloneshop2.service;
 
+import com.youngsil.cloneshop2.domain.item.Book;
 import com.youngsil.cloneshop2.domain.item.Item;
 import com.youngsil.cloneshop2.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +27,10 @@ public class ItemService {
 
     public Item findOne(Long itemId) {
         return itemRepository.findOne(itemId);
+    }
+
+    public void updateItem(Long itemId, String name, int price, int stockQuantity, String author, String isbn) {
+        Book item = (Book) itemRepository.findOne(itemId);
+        item.updateItem(name, price, stockQuantity, author, isbn);
     }
 }

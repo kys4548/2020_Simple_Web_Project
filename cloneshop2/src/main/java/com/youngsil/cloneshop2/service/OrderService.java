@@ -5,9 +5,12 @@ import com.youngsil.cloneshop2.domain.item.Item;
 import com.youngsil.cloneshop2.repository.ItemRepository;
 import com.youngsil.cloneshop2.repository.MemberRepository;
 import com.youngsil.cloneshop2.repository.OrderRepository;
+import com.youngsil.cloneshop2.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
@@ -33,4 +36,14 @@ public class OrderService {
         return order.getId();
     }
 
+    @Transactional
+    public void cancelOrder(Long orderId) {
+        Order order = orderRepository.findOne(orderId);
+        order.cancel();
+    }
+
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByCriteria(orderSearch);
+    }
 }
