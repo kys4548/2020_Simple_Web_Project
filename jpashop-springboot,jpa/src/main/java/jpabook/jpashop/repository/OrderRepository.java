@@ -55,7 +55,6 @@ public class OrderRepository {
         TypedQuery<Order> query = em.createQuery(cq).setMaxResults(1000);
         return query.getResultList();
     }
-
 //    public List<Order> findAll(OrderSearch orderSearch) {
 //        JPAQueryFactory query = new JPAQueryFactory(em);
 //        QOrder order = QOrder.order;

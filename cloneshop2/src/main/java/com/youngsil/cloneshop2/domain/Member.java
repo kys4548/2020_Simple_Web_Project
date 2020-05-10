@@ -1,5 +1,6 @@
 package com.youngsil.cloneshop2.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class Member {
 
     private Address address;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 
@@ -37,5 +39,9 @@ public class Member {
 
     public void changeName(String name) {
         this.name = name;
+    }
+
+    public void changeAddress(Address address) {
+        this.address = address;
     }
 }

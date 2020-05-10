@@ -1,5 +1,6 @@
 package com.youngsil.cloneshop2.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Category {
     @JoinColumn(name = "parent_id")
     private Category parent;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
 

@@ -42,8 +42,15 @@ public class OrderService {
         order.cancel();
     }
 
+    public List<Order> findAll() {
+        return orderRepository.findAll();
+    }
 
     public List<Order> findOrders(OrderSearch orderSearch) {
         return orderRepository.findAllByCriteria(orderSearch);
+    }
+
+    public List<Order> findAllWithMemberDelivery() {
+        return orderRepository.findAllWithMemberDelivery();
     }
 }

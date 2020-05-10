@@ -1,5 +1,6 @@
 package com.youngsil.cloneshop2.service;
 
+import com.youngsil.cloneshop2.domain.Address;
 import com.youngsil.cloneshop2.domain.Member;
 import com.youngsil.cloneshop2.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -41,5 +42,12 @@ public class MemberService {
     public void update(Long memberId, String name) {
         Member member = memberRepository.findOne(memberId);
         member.changeName(name);
+    }
+
+    @Transactional
+    public void update(Long memberId, String name, String city, String street, String zipcode) {
+        Member member = memberRepository.findOne(memberId);
+        member.changeName(name);
+        member.changeAddress(new Address(city, street, zipcode));
     }
 }

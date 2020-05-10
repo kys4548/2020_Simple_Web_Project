@@ -1,5 +1,6 @@
 package com.youngsil.cloneshop2.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.youngsil.cloneshop2.domain.item.Item;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ public class ItemCategory {
     private Long id;
 
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Item item;
