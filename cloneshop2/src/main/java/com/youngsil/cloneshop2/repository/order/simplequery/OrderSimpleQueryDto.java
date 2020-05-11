@@ -8,16 +8,11 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
+@AllArgsConstructor
 public class OrderSimpleQueryDto {
     private String name;
     private LocalDateTime orderDate;
     private OrderStatus orderStatus;
     private Address address;
 
-    public OrderSimpleQueryDto(String name, LocalDateTime orderDate, OrderStatus orderStatus, Address address) {
-        this.name = name;
-        this.orderDate = orderDate;
-        this.orderStatus = orderStatus;
-        this.address = address;
-    }
 }

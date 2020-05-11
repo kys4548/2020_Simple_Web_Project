@@ -18,12 +18,14 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
-public class OrderSimpleController {
+public class OrderSimpleApiController {
 
    private final OrderService orderService;
    private final OrderSimpleQueryRepository orderSimpleQueryRepository;
 
     /**
+     *  entity를 통한 조회
+     *
      *  Order 전체 조회 1번 쿼리 (n개 조회)
      *  Member 조회  n번 쿼리
      *  Delivery 조회 n번 쿼리
@@ -69,6 +71,11 @@ public class OrderSimpleController {
         return new Result(collect.size(), collect);
     }
 
+    /**
+     * entity가 아닌 dto를 통해 db에서 값을 받아온다.
+     * DB에서 처음부터 원하는 컬럼만 조회한다.
+     * 총 쿼리 1회
+     */
     @GetMapping("/api/v4/simple-orders")
     public Result<List> ordersV4() {
         List<OrderSimpleQueryDto> orders = orderSimpleQueryRepository.findOrderDto();
