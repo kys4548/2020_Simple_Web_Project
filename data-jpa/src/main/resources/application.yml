@@ -16,9 +16,8 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
-    #콘솔이 아닌 로그파일에 남기기 위한 설정
 
-    org.hibernate.type: trace
+    #org.hibernate.type: trace
     #파라미터까지 볼 수 있는 옵션
     #파라미터가 보이긴 하지만 잘 안보여서
     #외부 라이브러리 p6spy 사용.
