@@ -508,11 +508,11 @@ public class QuerydslBasicTest {
     }
 
     @Test
-    public void tupleProjection() {
-        List<Tuple> result = queryFactory
-                .select(member.username, member.age)
-                .from(member)
-                .fetch();
+        public void tupleProjection() {
+            List<Tuple> result = queryFactory
+                    .select(member.username, member.age)
+                    .from(member)
+                    .fetch();
 
         for (Tuple tuple : result) {
             String username = tuple.get(member.username);

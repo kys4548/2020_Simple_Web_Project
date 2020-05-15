@@ -1,26 +1,18 @@
 spring:
-  profiles:
-    active: local
+  profiles: local
   datasource:
-    url: "jdbc:h2:tcp://localhost/~/querydsl"
     driver-class-name: org.h2.Driver
+    url: "jdbc:h2:tcp://localhost/~/querydsl"
     username: sa
     password:
-
   jpa:
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
-        #show_sql: true
         format_sql: true
         use_sql_comments: true
-        #jpql이 어떻게 나가는지
-
 logging:
   level:
     org.hibernate.SQL: debug
     org.hibernate.type: trace
-
-
-#show sql은 System.out으로 출력되고 org.hibernate.SQL은 logger로 출력
