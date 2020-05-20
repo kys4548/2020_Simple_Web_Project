@@ -16,8 +16,16 @@ public class StudyService {
         this.repository = repository;
     }
 
+    public Study openStudy(Study study) {
+        study.open();
+        Study opendStudy = repository.save(study);
+        memberservice.note();
+        return opendStudy;
+    }
+
     public Study createNewStudy(Long memberId, Study study) {
         Optional<Member> member = memberservice.findById(memberId);
+        memberservice.note();
         return repository.save(study);
     }
 

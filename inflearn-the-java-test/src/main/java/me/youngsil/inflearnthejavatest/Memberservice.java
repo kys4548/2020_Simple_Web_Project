@@ -11,4 +11,8 @@ public class Memberservice {
     public void validate(Long id) {
         System.out.println("\"g\" = " + "g");
     }
+
+    public void note() {
+
+    }
 }

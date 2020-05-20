@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    username: studytest
+    password: studytest
+    url: "jdbc:tc:postgresql:///studytest"
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
