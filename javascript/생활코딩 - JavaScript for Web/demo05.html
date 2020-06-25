@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="button" value="open" onclick="winopen()">
+	<input type="text" onkeypress="winmessage(this.value)">
+	<input type="button" value="close" onclick="winclose()">
+	<script type="text/javascript">
+		function winopen() {
+			win = window.open('./demo06.html', 'youngsil');
+		}
+		function winmessage(msg) {
+			win.alert(msg);
+		}
+		function winclose() {
+			win.close();
+		}
+
+	</script>
+</body>
+</html>
