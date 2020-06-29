@@ -1,0 +1,1 @@
+curl --http1.0 -v -X POST http://localhost:18888 -F title="Http is fun, cool, sexy" -F author=kys4548 -F detail=@test.txt
