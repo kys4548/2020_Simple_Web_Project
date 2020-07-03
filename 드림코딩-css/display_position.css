@@ -1,0 +1,50 @@
+
+* {
+  background: black;
+}
+
+.container {
+  background: yellow;
+  left: 20px;
+  top: 20px;
+  position: relative;
+}
+
+div {
+  width: 50px;
+  height: 50px;
+  background: red;
+  margin-bottom: 20px;
+}
+
+/* static */
+.box1 {
+  background: blue;
+}
+
+/* relative */
+.box2 {
+  position: relative;
+  top: 300px;
+  left: 100px;
+}
+
+/* absolute */
+.box3 {
+  position: absolute;
+  top: 5px;
+  left: 100px;
+}
+
+.box4 {
+  position:fixed;
+  top:0px;
+  left: 0px;
+  
+}
+
+.box5 {
+  position:sticky;
+  top: 10px;
+  left: 100px;
+}

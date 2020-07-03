@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="flex.css">
+</head>
+<body>
+<div class="container">
+  <div class="item item1">1</div>
+  <div class="item item2">2</div>
+  <div class="item item3">3</div>
+  <div class="item item4">4</div>
+  <div class="item item5">5</div>
+  <div class="item item6">6</div>
+  <div class="item item7">7</div>
+  <div class="item item8">8</div>
+  <div class="item item9">9</div>
+  <div class="item item10">10</div>
+</div>
+</body>
+</html>
+
+
+
+<!--
+height에서
+100%는 자식들을 모두 담는 크기 지정
+100vh는 부모의 크키를 따라간다.
+
+div왼쪽의 모든곳들은 margin이 들어가 있다.
+더 이상 아이템이 들어오지 못한다.
+
+
+box에서의 display 설정
+flex를 하면 block의 기본 margin을 없애 
+붙어서 정렬되게 된다.
+
+
+box에서의 flex-direction 설정
+row, row-reverse
+column, column-reverse
+
+
+box에서의 flex-wrap
+nowrap : 주어진 공간을 초과하지 않는다.
+wrap : 초과하여 넘어감
+reverse 가능
+
+
+
+box에서의 flex-flow 기능
+border처럼 direction과 wrap을 묶어서 사용
+
+
+
+**(main axis)
+box에서의 justify-content
+아이템들을 어떻게 배치할것인가 
+flex-start : 왼쪽 정렬
+flex-end : 오른쪽 정렬
+center : 가운데 정렬
+space-around : 아이템 사이에 공백두기
+space-evenly : 처음과 마지막 공백도 동일
+space-between : 중간에만 공백
+
+
+**(반대방향 조절)
+box에서의 align-items
+center : 가운데 정렬
+
+
+
+
+
+
+
+item에서의 기능들
+order : 나오는 순서 결정
+flex-grow: item들마다 차지하는 비율 설정
+flex-shrink: 창을 줄일때 들어주는 비율설정
+flex-basis: 위에 것이 없을때 퍼센트 값으로 사용
+align-self: 아이템하나를 변경
+-->
