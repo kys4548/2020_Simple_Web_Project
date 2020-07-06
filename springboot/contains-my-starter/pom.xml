@@ -48,6 +48,12 @@
             <artifactId>youngsil-spring-boot-starter2</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.youngsil</groupId>
+            <artifactId>singleman-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

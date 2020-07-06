@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4363f165-e754-4070-a3e9-6b70d6be7ec5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../spring/spring06/target/m2e-wtp/web-resources/META-INF/maven/com.youngsil/spring06/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring06/target/m2e-wtp/web-resources/META-INF/maven/com.youngsil/spring06/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring07/target/m2e-wtp/web-resources/META-INF/maven/com.example/spring07/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring07/target/m2e-wtp/web-resources/META-INF/maven/com.example/spring07/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/SpringSecurity01Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/form/SampleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/form/SampleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/templates/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/templates/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/templates/info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/test/java/me/youngsil/spring_security_01/SpringSecurity01ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/test/java/me/youngsil/spring_security_01/account/AccountControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/test/java/me/youngsil/spring_security_01/account/WithUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../contains-my-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../contains-my-starter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../contains-my-starter/src/main/java/com/example/containsmystarter/AppRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../contains-my-starter/src/main/java/com/example/containsmystarter/ContainsMyStarterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../contains-my-starter/src/main/java/com/example/containsmystarter/ContainsMyStarterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../contains-my-starter/src/main/resources/application.properties" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1eJl3T4A5bdTWiBFLv5n3S0sRV7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../contains-my-starter" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4363f165-e754-4070-a3e9-6b70d6be7ec5" name="Default Changelist" comment="" />
+      <created>1594047376533</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594047376533</updated>
+      <workItem from="1594047380024" duration="2048000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="958" y="117" key="#com.intellij.ide.util.MemberChooser" timestamp="1594048436944">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="958" y="117" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1594048436944" />
+    <state x="933" y="188" key="FileChooserDialogImpl" timestamp="1594048829910">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="933" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1594048829910" />
+    <state width="855" height="222" key="GridCell.Tab.0.bottom" timestamp="1594048787529">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="855" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1594048787529" />
+    <state width="855" height="222" key="GridCell.Tab.0.center" timestamp="1594048787529">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="855" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1594048787529" />
+    <state width="855" height="222" key="GridCell.Tab.0.left" timestamp="1594048787528">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="855" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1594048787528" />
+    <state width="855" height="222" key="GridCell.Tab.0.right" timestamp="1594048787529">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="855" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1594048787529" />
+    <state x="890" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1594047381236">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="890" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1594047381236" />
+  </component>
+</project>
