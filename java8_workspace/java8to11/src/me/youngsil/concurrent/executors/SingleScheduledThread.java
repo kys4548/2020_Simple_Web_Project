@@ -10,7 +10,9 @@ public class SingleScheduledThread {
 
 
         ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        scheduledExecutorService.schedule(getRunnable("hello"), 3, TimeUnit.SECONDS);
+        scheduledExecutorService.scheduleAtFixedRate(getRunnable("hello"), 1, 2, TimeUnit.SECONDS);
+        scheduledExecutorService.shutdown();
+        System.out.println("test");
 
     }
     public static Runnable getRunnable(String message) {
