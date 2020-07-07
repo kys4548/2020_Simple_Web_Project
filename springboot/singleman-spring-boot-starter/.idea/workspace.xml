@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4363f165-e754-4070-a3e9-6b70d6be7ec5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../spring/spring06/target/m2e-wtp/web-resources/META-INF/maven/com.youngsil/spring06/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring06/target/m2e-wtp/web-resources/META-INF/maven/com.youngsil/spring06/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring07/target/m2e-wtp/web-resources/META-INF/maven/com.example/spring07/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring07/target/m2e-wtp/web-resources/META-INF/maven/com.example/spring07/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/SpringSecurity01Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountCreateDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/account/AccountService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/form/SampleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/java/me/youngsil/spring_security_01/form/SampleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/templates/admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/templates/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/main/resources/templates/info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/test/java/me/youngsil/spring_security_01/SpringSecurity01ApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/test/java/me/youngsil/spring_security_01/account/AccountControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_security_01/src/test/java/me/youngsil/spring_security_01/account/WithUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../contains-my-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../contains-my-starter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../contains-my-starter/src/main/java/com/example/containsmystarter/AppRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../contains-my-starter/src/main/java/com/example/containsmystarter/ContainsMyStarterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../contains-my-starter/src/main/java/com/example/containsmystarter/ContainsMyStarterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../contains-my-starter/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../contains-my-starter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -81,7 +51,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594047376533</updated>
-      <workItem from="1594047380024" duration="2048000" />
+      <workItem from="1594047380024" duration="2693000" />
+      <workItem from="1594062004431" duration="953000" />
     </task>
     <servers />
   </component>
@@ -97,25 +68,29 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="933" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1594048829910" />
-    <state width="855" height="222" key="GridCell.Tab.0.bottom" timestamp="1594048787529">
+    <state width="855" height="222" key="GridCell.Tab.0.bottom" timestamp="1594051963052">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="855" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1594048787529" />
-    <state width="855" height="222" key="GridCell.Tab.0.center" timestamp="1594048787529">
+    <state width="855" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1594051963052" />
+    <state width="855" height="222" key="GridCell.Tab.0.center" timestamp="1594051963051">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="855" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1594048787529" />
-    <state width="855" height="222" key="GridCell.Tab.0.left" timestamp="1594048787528">
+    <state width="855" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1594051963051" />
+    <state width="855" height="222" key="GridCell.Tab.0.left" timestamp="1594051963051">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="855" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1594048787528" />
-    <state width="855" height="222" key="GridCell.Tab.0.right" timestamp="1594048787529">
+    <state width="855" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1594051963051" />
+    <state width="855" height="222" key="GridCell.Tab.0.right" timestamp="1594051963051">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="855" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1594048787529" />
+    <state width="855" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1594051963051" />
     <state x="890" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1594047381236">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="890" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1594047381236" />
+    <state x="381" y="134" key="new project wizard" timestamp="1594051961296">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="381" y="134" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1594051961296" />
   </component>
 </project>
