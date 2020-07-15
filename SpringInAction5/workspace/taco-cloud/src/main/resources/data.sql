@@ -1,0 +1,12 @@
+-- delete from taco_order_tacos;
+-- delete from taco_ingredients;
+-- delete from taco;
+-- delete from taco_order;
+-- delete from ingredient;
+--
+-- insert into ingredient (id, name, ingredientType) values ('wrapId1', 'wrapName1', 'WRAP');
+-- insert into ingredient (id, name, ingredientType) values ('wrapId2', 'wrapName2', 'WRAP');
+-- insert into ingredient (id, name, ingredientType) values ('proteinId1', 'proteinName1', 'PROTEIN');
+-- insert into ingredient (id, name, ingredientType) values ('veggiesId1', 'veggiesName1', 'VEGGIES');
+-- insert into ingredient (id, name, ingredientType) values ('cheeseId1', 'cheeseName1', 'CHEESE');
+-- insert into ingredient (id, name, ingredientType) values ('sauceId1', 'sauceName1', 'SAUCE');

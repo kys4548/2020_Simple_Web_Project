@@ -1,13 +1,23 @@
 package tacos;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
 
 @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
+@Entity
 public class Ingredient {
 
-    private final String id;
-    private final String name;
-    private final IngredientType ingredientType;
+    @Id
+    private String id;
+
+    private String name;
+
+    @Enumerated(value = EnumType.STRING)
+    private IngredientType ingredientType;
 }

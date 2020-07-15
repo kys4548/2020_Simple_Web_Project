@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Deprecated
 @Slf4j
-@Controller
+//@Controller
 public class RedesignTacoController {
 
     @GetMapping("/redesign")
