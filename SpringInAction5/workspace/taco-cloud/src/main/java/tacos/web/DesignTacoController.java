@@ -3,16 +3,15 @@ package tacos.web;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import tacos.Ingredient;
-import tacos.IngredientType;
-import tacos.Order;
-import tacos.Taco;
+import tacos.*;
 import tacos.data.IngredientRepository;
 import tacos.data.TacoRepository;
+import tacos.data.UserRepository;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -27,6 +26,7 @@ public class DesignTacoController {
 
     private final IngredientRepository ingredientRepository;
     private final TacoRepository tacoRepository;
+    private final UserRepository userRepository;
 
     @ModelAttribute(name = "order")
     public Order order() {
@@ -53,7 +53,7 @@ public class DesignTacoController {
     }
 
     @GetMapping("/design")
-    public String showDesignForm(Model model) {
+    public String showDesignForm(Model model, @AuthenticationPrincipal User user) {
         List<Ingredient> ingredients = new ArrayList<>();
 //        ingredients.add(new Ingredient("wrapId1", "wrap1" , IngredientType.WRAP));
 //        ingredients.add(new Ingredient("wrapId2", "wrap2" ,IngredientType.WRAP));
@@ -70,7 +70,7 @@ public class DesignTacoController {
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
         }
 
-        model.addAttribute("taco", new Taco());
+        model.addAttribute("user", user);
 
         return "design";
     }

@@ -23,6 +23,9 @@ public class Order implements Serializable {
 
     private Date placedAt;
 
+    @ManyToOne
+    private User user;
+
     @NotBlank(message = "required")
     private String deliveryName;
 
@@ -58,4 +61,5 @@ public class Order implements Serializable {
     void placedAt() {
         this.placedAt = new Date();
     }
+
 }
