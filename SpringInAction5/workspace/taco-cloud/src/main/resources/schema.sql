@@ -1,40 +1,17 @@
--- create table if not exists ingredient (
---     id varchar(255) not null,
---     name varchar(255) not null,
---     ingredientType varchar(255) not null
--- );
---
--- create table if not exists  taco (
---     id identity,
---     name varchar(255) not null,
---     createAt timestamp not null
--- );
---
--- create table if not exists  taco_ingredients (
---     taco bigint not null,
---     ingredient varchar(255) not null
--- );
---
--- alter table taco_ingredients add foreign key (taco) references taco(id);
--- alter table taco_ingredients add foreign key (ingredient) references ingredient(id);
---
--- create table if not exists  taco_order (
---     id identity,
---     deliveryName varchar(255) not null,
---     deliveryStreet varchar(255) not null,
---     deliveryCity varchar(255) not null,
---     deliveryState varchar(255) not null,
---     deliveryZip varchar(255) not null,
---     ccNumber varchar(255) not null,
---     ccExpiration varchar(255) not null,
---     ccCVV varchar(255) not null,
---     placedAt timestamp not null
--- );
---
--- create table if not exists taco_order_tacos (
---     tacoOrder bigint not null,
---     taco bigint not null
--- );
---
--- alter table taco_order_tacos add foreign key (tacoOrder) references taco_order(id);
--- alter table taco_order_tacos add foreign key (taco) references taco(id);
+drop table if exists users;
+drop table if exists authorities;
+drop table if exists ix_auth_username;
+
+create table if not exists  users (
+    username varchar2(50) not null primary key,
+    password varchar2(50) not null,
+    enabled char(1) default('1')
+);
+
+create table if not exists authorities (
+    username varchar2(50) not null,
+    authority varchar2(50) not null,
+    constraint fk_authorities_users foreign key(username) references users(username)
+);
+
+create unique index ix_auth_username on authorities (username, authority);
