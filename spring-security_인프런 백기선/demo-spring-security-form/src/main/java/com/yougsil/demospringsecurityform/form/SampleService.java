@@ -14,7 +14,6 @@ import java.util.Collection;
 public class SampleService {
     public void dashboard() {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        final UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        System.out.println( authentication+ " " +userDetails);
+        System.out.println(authentication.getClass() + " " + authentication.getPrincipal().getClass());
     }
 }

@@ -38,6 +38,7 @@ public class SampleController {
     @GetMapping("/dashboard")
     public String dash(Model model, Principal principal) {
         model.addAttribute("message", "hello spring security : dash");
+        System.out.println(principal.getClass());
         sampleService.dashboard();
         return "dashboard";
     }
@@ -46,5 +47,11 @@ public class SampleController {
     public String admin(Model model, Principal principal) {
         model.addAttribute("message", "hello spring security : admin");
         return "admin";
+    }
+
+    @GetMapping("/user")
+    public String user(Model model, Principal principal) {
+        model.addAttribute("message", principal.getName());
+        return "user";
     }
 }
