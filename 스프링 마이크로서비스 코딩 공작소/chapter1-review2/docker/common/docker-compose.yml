@@ -1,0 +1,6 @@
+version: '2'
+services:
+  simple-service:
+    image: chapter1-review2-simpleservice
+    ports:
+    - 8080:8080

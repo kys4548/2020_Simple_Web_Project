@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55c9759d-da95-42d8-b4ed-6c4a62142410" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../chapter1-review/simple-service/src/main/java/com/youngsil/simpleservice/controller/SimpleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/src/main/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/simple-service/src/main/docker/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/classes/com/youngsil/simpleService/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/classes/com/youngsil/simpleService/controller/SimpleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/docker/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/docker/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/docker/simple-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/dockerfile/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/dockerfile/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/simple-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/simple-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-service/target/test-classes/image_info.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\a\Desktop\study\2020_Simple_Web_Project\스프링 마이크로서비스 코딩 공작소\chapter1\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1f7dzlQcoTkYP2MneYiIdAes64Z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../코딩공작소/spmia-chapter1" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="simple-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.youngsil.simpleService.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55c9759d-da95-42d8-b4ed-6c4a62142410" name="Default Changelist" comment="" />
+      <created>1595573329555</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595573329555</updated>
+      <workItem from="1595573331398" duration="7435000" />
+      <workItem from="1595597632340" duration="13285000" />
+      <workItem from="1595664215583" duration="4605000" />
+      <workItem from="1595669666966" duration="1040000" />
+      <workItem from="1595752493858" duration="16000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1051" y="297" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595664318130">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state x="1051" y="297" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1829.989@0.0.1829.989" timestamp="1595664318130" />
+    <state x="957" y="253" key="FileChooserDialogImpl" timestamp="1595664909858">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state x="957" y="253" key="FileChooserDialogImpl/0.0.1829.989@0.0.1829.989" timestamp="1595664909858" />
+    <state width="1785" height="265" key="GridCell.Tab.0.bottom" timestamp="1595612394831">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state width="1785" height="265" key="GridCell.Tab.0.bottom/0.0.1829.989@0.0.1829.989" timestamp="1595612394831" />
+    <state width="1785" height="265" key="GridCell.Tab.0.center" timestamp="1595612394830">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state width="1785" height="265" key="GridCell.Tab.0.center/0.0.1829.989@0.0.1829.989" timestamp="1595612394830" />
+    <state width="1785" height="265" key="GridCell.Tab.0.left" timestamp="1595612394830">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state width="1785" height="265" key="GridCell.Tab.0.left/0.0.1829.989@0.0.1829.989" timestamp="1595612394830" />
+    <state width="1785" height="265" key="GridCell.Tab.0.right" timestamp="1595612394830">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state width="1785" height="265" key="GridCell.Tab.0.right/0.0.1829.989@0.0.1829.989" timestamp="1595612394830" />
+    <state x="728" y="324" key="com.intellij.ide.util.TipDialog" timestamp="1595752496969">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state x="728" y="324" key="com.intellij.ide.util.TipDialog/0.0.1829.989@0.0.1829.989" timestamp="1595752496969" />
+    <state x="122" y="117" width="734" height="681" key="dock-window-1" timestamp="1595577527855">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state x="122" y="117" width="734" height="681" key="dock-window-1/0.0.1829.989@0.0.1829.989" timestamp="1595577527855" />
+    <state x="387" y="331" key="new project wizard" timestamp="1595664961173">
+      <screen x="0" y="0" width="1829" height="989" />
+    </state>
+    <state x="387" y="331" key="new project wizard/0.0.1829.989@0.0.1829.989" timestamp="1595664961173" />
+  </component>
+</project>
