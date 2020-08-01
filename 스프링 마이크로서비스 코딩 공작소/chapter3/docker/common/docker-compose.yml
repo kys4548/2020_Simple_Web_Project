@@ -1,0 +1,23 @@
+version: '2'
+services:
+
+  configserver:
+    image: chapter3/confsvr:latest
+    ports:
+    - "8888:8888"
+
+  database:
+    image: postgres
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_USER: "youngsil"
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB:       "micro_db"
+
+  licensingservice:
+    image: chapter3/licensing-service:latest
+    ports:
+    - "8080:8080"
+    environment:
+      PROFILE: "default"

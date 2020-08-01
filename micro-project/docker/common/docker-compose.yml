@@ -1,0 +1,16 @@
+version: '2'
+services:
+
+  database-service:
+    image: postgres
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_USER: "youngsil"
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: "msa_account_db"
+
+  config-service:
+    image: msa-config-server
+    ports:
+    - "8888:8888"
