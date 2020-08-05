@@ -16,6 +16,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 @SuppressWarnings("deprecation")
 public class MyController {
 
+    public static final String URL1 = "http://localhost:8081/service?req={req}";
+    public static final String URL2 = "http://localhost:8081/service2?req={req}";
     @Autowired
     MyService myService;
 
@@ -30,7 +32,7 @@ public class MyController {
         DeferredResult<String> dr = new DeferredResult<>();
 
         final ListenableFuture<ResponseEntity<String>> f1 = rt.getForEntity(
-                "http://localhost:8081/service?req={req}",
+                URL1,
                 String.class,
                 "hello " + idx
         );
@@ -38,7 +40,7 @@ public class MyController {
         f1.addCallback(
                 s -> {
                     final ListenableFuture<ResponseEntity<String>> f2 = rt.getForEntity(
-                            "http://localhost:8081/service2?req={req}",
+                            URL2,
                             String.class,
                             s.getBody()
                     );
