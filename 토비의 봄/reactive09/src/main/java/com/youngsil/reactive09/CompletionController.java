@@ -31,6 +31,7 @@ public class CompletionController {
         Completion.
                 from(rt.getForEntity(URL1, String.class, "hello" + idx))
                 .andApply(re -> rt.getForEntity(URL2, String.class, re.getBody()))
+                .andError(dr::setErrorResult)
                 .andAccept(re -> dr.setResult(re.getBody()));
 
 
