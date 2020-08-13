@@ -2,9 +2,10 @@ package com.example.demoinflearnrestapi.events;
 
 import com.example.demoinflearnrestapi.BaseEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @EqualsAndHashCode(callSuper = true)
-@Data @Builder @NoArgsConstructor @AllArgsConstructor
+@Data @SuperBuilder @NoArgsConstructor @AllArgsConstructor
 public class EventDto extends BaseEntity {
     private String name;
     private String description;
