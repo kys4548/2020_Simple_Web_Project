@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @SuperBuilder
 @NoArgsConstructor @AllArgsConstructor
@@ -15,6 +16,7 @@ public class Event extends BaseEntity {
 
     @Id @GeneratedValue
     private Long id;
+
     private String name;
     private String description;
     private String location; // (optional) 이게 없으면 온라인 모임

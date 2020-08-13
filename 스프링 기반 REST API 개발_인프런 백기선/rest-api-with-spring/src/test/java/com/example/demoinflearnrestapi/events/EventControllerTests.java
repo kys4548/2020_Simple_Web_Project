@@ -2,6 +2,7 @@ package com.example.demoinflearnrestapi.events;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -34,6 +35,7 @@ public class EventControllerTests {
     ObjectMapper objectMapper;
 
     @Test
+    @DisplayName("정상적인 Event 생성")
     void createEvent() throws Exception {
         EventDto event = EventDto.builder()
                 .name("birthDay")
@@ -63,6 +65,7 @@ public class EventControllerTests {
     }
 
     @Test
+    @DisplayName("createEvent 주어진 입력값 외에 다른 입력이 들어온 경우 Bad_Request")
     void createEvent_Bad_Request() throws Exception {
         Event event = Event.builder()
                 .id(100L)
@@ -88,5 +91,16 @@ public class EventControllerTests {
                 .andDo(print())
                 .andExpect(status().isBadRequest())
                 ;
+    }
+
+    @Test
+    @DisplayName("createEvent Validation 검증")
+    void createEvent_Bad_Request_Empty_Input() throws Exception {
+        EventDto eventDto = EventDto.builder().build();
+
+        mockMvc.perform(post("/api/events")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(eventDto)))
+                .andExpect(status().isBadRequest());
     }
 }
