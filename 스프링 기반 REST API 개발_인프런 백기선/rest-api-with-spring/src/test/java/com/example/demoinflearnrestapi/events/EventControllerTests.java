@@ -35,7 +35,7 @@ public class EventControllerTests {
     ObjectMapper objectMapper;
 
     @Test
-    @DisplayName("정상적인 Event 생성")
+    @DisplayName("정상적인 Event 생성 성공")
     void createEvent() throws Exception {
         EventDto event = EventDto.builder()
                 .name("birthDay")
@@ -65,7 +65,7 @@ public class EventControllerTests {
     }
 
     @Test
-    @DisplayName("createEvent 주어진 입력값 외에 다른 입력이 들어온 경우 Bad_Request")
+    @DisplayName("createEvent 요구하지 않은값 들어올때 요청 실패")
     void createEvent_Bad_Request() throws Exception {
         Event event = Event.builder()
                 .id(100L)
@@ -94,7 +94,7 @@ public class EventControllerTests {
     }
 
     @Test
-    @DisplayName("createEvent Empty Validation 검증실패")
+    @DisplayName("createEvent Empty Validation 검증")
     void createEvent_Bad_Request_Empty_Input() throws Exception {
         EventDto eventDto = EventDto.builder().build();
 
@@ -105,7 +105,7 @@ public class EventControllerTests {
     }
 
     @Test
-    @DisplayName("createEvent Wrong Validation 검증실패")
+    @DisplayName("createEvent Wrong Validation 검증")
     void createEvent_Bad_Request_Wrong_Input() throws Exception {
         EventDto eventDto = EventDto.builder()
                 .name("birthDay")
