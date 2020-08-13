@@ -25,5 +25,5 @@ public class Event extends BaseEntity {
     private boolean free;
 
     @Enumerated(EnumType.STRING)
-    private EventStatus eventStatus;
+    private EventStatus eventStatus = EventStatus.DRAFT;
 }
