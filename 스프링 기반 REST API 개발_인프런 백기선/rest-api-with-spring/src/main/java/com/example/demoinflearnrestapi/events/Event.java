@@ -2,13 +2,18 @@ package com.example.demoinflearnrestapi.events;
 
 import com.example.demoinflearnrestapi.BaseEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
-@Builder @AllArgsConstructor @NoArgsConstructor
+@SuperBuilder
+@NoArgsConstructor @AllArgsConstructor
 @Getter @Setter @EqualsAndHashCode(of = "id", callSuper = false)
+@ToString(callSuper = true)
+@Entity
 public class Event extends BaseEntity {
 
+    @Id @GeneratedValue
     private Long id;
     private String name;
     private String description;
@@ -19,5 +24,6 @@ public class Event extends BaseEntity {
     private boolean offline;
     private boolean free;
 
+    @Enumerated(EnumType.STRING)
     private EventStatus eventStatus;
 }
