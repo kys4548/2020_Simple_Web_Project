@@ -1,22 +1,25 @@
 package com.example.demoinflearnrestapi.events;
 
 import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
 
 import java.time.LocalDateTime;
 
 @Component
 public class EventValidator {
 
-    public void validate(EventDto eventDto) {
+    public void validate(EventDto eventDto, Errors errors) {
         if(eventDto.getBasePrice() > eventDto.getMaxPrice() && eventDto.getMaxPrice() != 0) {
-            throw new EventWrongValidationException("basePrice is bigger than maxPrice");
+            errors.rejectValue("basePrice", "wrongValue", "basePrice is wrong.");
+            errors.rejectValue("maxPrice", "wrongValue", "maxPrice is wrong.");
+            errors.reject("wrongPrice", "Values prices are wrong");
         }
 
         LocalDateTime endEventDateTime = eventDto.getEndEventDateTime();
         if(endEventDateTime.isBefore(eventDto.getBeginEnrollmentDateTime()) ||
         endEventDateTime.isBefore(eventDto.getCloseEnrollmentDateTime()) ||
         endEventDateTime.isBefore(eventDto.getBeginEventDateTime())) {
-            throw new EventWrongValidationException("endEventDateTime이 너무크다.");
+            errors.rejectValue("endEventDateTime", "wrongValue", "endEventDateTime is wrong.");
         }
 
 

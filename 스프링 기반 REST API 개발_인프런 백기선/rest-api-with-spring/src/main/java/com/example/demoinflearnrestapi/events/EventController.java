@@ -2,7 +2,10 @@ package com.example.demoinflearnrestapi.events;
 
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
 import org.springframework.hateoas.MediaTypes;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -12,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
@@ -25,15 +30,31 @@ public class EventController {
     private final EventValidator eventValidator;
 
     @PostMapping
-    public ResponseEntity<Event> createEvent(@Valid @RequestBody EventDto eventDto) {
-
-        eventValidator.validate(eventDto);
+    public ResponseEntity createEvent(@Valid @RequestBody EventDto eventDto, Errors errors) {
+        if (errors.hasErrors()) {
+            return ResponseEntity.badRequest().body(errors);
+        }
+        eventValidator.validate(eventDto, errors);
+        if (errors.hasErrors()) {
+            return ResponseEntity.badRequest().body(errors);
+        }
         Event event = modelMapper.map(eventDto, Event.class);
+        event.update();
         final Event newEvent = eventRepository.save(event);
-        final URI createUri = linkTo(EventController.class)
-                .slash(newEvent.getId())
-                .toUri();
+        final WebMvcLinkBuilder selfLinkBuilder = linkTo(EventController.class)
+                .slash(newEvent.getId());
 
-        return ResponseEntity.created(createUri).body(event);
+        final URI createUri = selfLinkBuilder.toUri();
+
+        List<Link> links = Arrays.asList(
+                selfLinkBuilder.withSelfRel(),
+                selfLinkBuilder.withRel("update-event"),
+                linkTo(EventController.class).withRel("query-events")
+        );
+
+        EntityModel model = EntityModel.of(event, links);
+
+
+        return ResponseEntity.created(createUri).body(model);
     }
 }

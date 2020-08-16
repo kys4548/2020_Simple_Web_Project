@@ -3,6 +3,6 @@ package com.example.springaopproxy;
 import java.lang.annotation.*;
 
 @Target(ElementType.METHOD)
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.CLASS)
 public @interface LogExecutionTime {
 }

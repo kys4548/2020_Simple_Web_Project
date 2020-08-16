@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter @Setter
 @AllArgsConstructor
+@Deprecated
 public class ExceptionResponse {
     private LocalDateTime localDateTime;
     private String message;
