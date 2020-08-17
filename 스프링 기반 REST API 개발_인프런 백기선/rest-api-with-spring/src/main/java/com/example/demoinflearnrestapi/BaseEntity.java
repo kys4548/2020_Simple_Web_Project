@@ -13,12 +13,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @MappedSuperclass
 public abstract class BaseEntity {
-    @NotNull
     private LocalDateTime beginEnrollmentDateTime;
-    @NotNull
     private LocalDateTime closeEnrollmentDateTime;
-    @NotNull
     private LocalDateTime beginEventDateTime;
-    @NotNull
     private LocalDateTime endEventDateTime;
 }
