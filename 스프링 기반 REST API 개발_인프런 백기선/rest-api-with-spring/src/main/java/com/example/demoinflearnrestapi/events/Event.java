@@ -1,6 +1,7 @@
 package com.example.demoinflearnrestapi.events;
 
 import com.example.demoinflearnrestapi.BaseEntity;
+import com.example.demoinflearnrestapi.accounts.Account;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -28,6 +29,10 @@ public class Event extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private EventStatus eventStatus = EventStatus.DRAFT;
+
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account account;
 
     public void update() {
         if(basePrice == 0 && maxPrice == 0) {
