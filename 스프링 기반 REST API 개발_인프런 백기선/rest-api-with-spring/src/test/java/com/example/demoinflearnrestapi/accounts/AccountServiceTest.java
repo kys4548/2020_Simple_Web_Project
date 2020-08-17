@@ -1,5 +1,6 @@
 package com.example.demoinflearnrestapi.accounts;
 
+import com.example.demoinflearnrestapi.common.AppProperties;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,22 +24,17 @@ class AccountServiceTest {
     @Autowired
     PasswordEncoder passwordEncoder;
 
+    @Autowired
+    AppProperties appProperties;
+
+
     @Test
     public void findByUsername() {
 
         //Given
-        final String username = "youngsil";
-        final String password = "1234";
+        final String username = appProperties.getUserUsername();
+        final String password = appProperties.getUserPassword();
         final String email = "kys4548@naver.com";
-
-        final Account account = Account.builder()
-                .email(email)
-                .username(username)
-                .password(password)
-                .roles(Set.of(AccountRole.ADMIN, AccountRole.USER))
-                .build();
-
-        accountService.saveAccount(account);
 
         //When
         UserDetailsService userDetailsService = (UserDetailsService)accountService;
