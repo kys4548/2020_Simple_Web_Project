@@ -13,12 +13,17 @@ import org.springframework.hateoas.MediaTypes;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -116,7 +121,9 @@ public class EventController {
     }
 
     @GetMapping
-    public ResponseEntity queryEvents(Pageable pageable, PagedResourcesAssembler assembler) {
+    public ResponseEntity queryEvents(Pageable pageable,
+                                      PagedResourcesAssembler assembler,
+                                      Principal principal) {
         final Page<Event> page = eventRepository.findAll(pageable);
         PagedModel model = assembler.toModel(page, e -> {
             return EntityModel.of(e).add(
@@ -124,9 +131,12 @@ public class EventController {
             );
         });
 
-        List<Link> links = Arrays.asList(
+        List<Link> links = new ArrayList(Arrays.asList(
                 linkTo(IndexController.class).slash("/docs/index.html#resources-events-list").withRel("profile")
-        );
+        ));
+        if(principal != null) {
+            links.add(linkTo(EventController.class).withRel("create-event"));
+        }
         model.add(links);
 
         return ResponseEntity.ok(model);
