@@ -18,9 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.AsyncRestTemplate;
 import org.springframework.web.context.request.async.DeferredResult;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 @SpringBootApplication
 @SuppressWarnings("deprecation")
 @EnableAsync
@@ -63,7 +60,9 @@ public class Application09 {
                     });
             return dr;
         }
+
     }
+
 
     @Service
     public static class MyService {
