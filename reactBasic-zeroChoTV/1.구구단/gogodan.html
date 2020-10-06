@@ -1,3 +1,5 @@
+<!-- 클래스 형 -->
+
 <html>
   <head>
     <script
@@ -44,30 +46,30 @@
           } else {
             this.setState({
               value: "",
-              result: "땡",
+              result: "땡!",
             });
           }
-          this.input.focus();
         };
 
         input;
-        onRefInput = (c) => (this.input = c);
+
+        onRefFocus = (c) => (this.input = c);
 
         render() {
           console.log("랜더링");
           return (
             <React.Fragment>
               <div>
-                {this.state.first}곱하기{this.state.second}는?
+                {this.state.first} 곱하기 {this.state.second} 는?
               </div>
               <form onSubmit={this.onSubmit}>
                 <input
-                  ref={this.onRefInput}
+                  ref={this.onRefFocus}
                   type="number"
-                  onChange={this.onChange}
                   value={this.state.value}
+                  onChange={this.onChange}
                 />
-                <button type="submit"> 입력!</button>
+                <button type="submit">제출</button>
               </form>
               <div>{this.state.result}</div>
             </React.Fragment>
