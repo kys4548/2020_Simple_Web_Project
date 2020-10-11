@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: springdeployment
+  name: springdeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springdeployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: springdeployment
+    spec:
+      containers:
+      - image: docker.io/kys4548/spring-k8s-initializer-demo:latest
+        name: spring-k8s-initializer-demo
+        resources: {}
+status: {}
