@@ -7,8 +7,9 @@ import com.youngsil.jpabookdemo.domain.OrderItem;
 import com.youngsil.jpabookdemo.domain.item.Item;
 import com.youngsil.jpabookdemo.repository.ItemRepository;
 import com.youngsil.jpabookdemo.repository.MemberRepository;
-import com.youngsil.jpabookdemo.repository.OrderRepository;
+import com.youngsil.jpabookdemo.repository.order.OrderRepository;
 import com.youngsil.jpabookdemo.repository.OrderSearch;
+import com.youngsil.jpabookdemo.repository.order.simpleQuery.OrderSimpleQueryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +21,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderService {
 
+    private final OrderSimpleQueryRepository orderSimpleQueryRepository;
     private final OrderRepository orderRepository;
     private final MemberRepository memberRepository;
     private final ItemRepository itemRepository;
@@ -47,5 +49,9 @@ public class OrderService {
 
     public List<Order> findOrders(OrderSearch orderSearch) {
         return orderRepository.findAllByCriteria(orderSearch);
+    }
+
+    public List<Order> findAllWithMemberDelivery() {
+        return orderRepository.findAllWithMemberDelivery();
     }
 }
