@@ -78,4 +78,11 @@ class MemberJpaRepositoryTest {
         long totalCount = memberJpaRepository.totalCount(age);
         //then
     }
+
+    @Test
+    public void bulkUpdate() {
+
+        final int resultCount = memberJpaRepository.bulkAgePlus(20);
+        assertThat(resultCount).isEqualTo(0);
+    }
 }

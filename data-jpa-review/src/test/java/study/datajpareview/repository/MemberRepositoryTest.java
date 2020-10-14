@@ -93,5 +93,6 @@ class MemberRepositoryTest {
         //then
         final List<Member> content = page.getContent();
         page.getTotalElements();
+        System.out.println(page);
     }
 }

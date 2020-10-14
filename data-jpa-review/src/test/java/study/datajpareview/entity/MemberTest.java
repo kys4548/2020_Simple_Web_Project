@@ -46,6 +46,30 @@ class MemberTest {
 
     }
 
+    @Test
+    public void lazyTest() {
+        final Member member = new Member("member");
+        final Team team = new Team("team");
+        final Member member2 = new Member("member");
+        final Team team2 = new Team("team");
+
+        member.changeTeam(team);
+        member2.changeTeam(team2);
+
+        em.persist(member);
+        em.persist(team);
+        em.persist(member2);
+        em.persist(team2);
+
+        em.flush();
+        em.clear();
+
+        final Member findMember = em.find(Member.class, member.getId());
+        final Member findMember2 = em.find(Member.class, member2.getId());
+        System.out.println(findMember2.getTeam().getClass() + " " + findMember.getTeam().getClass());
+
+
+    }
 
 
 }
