@@ -95,4 +95,9 @@ class MemberRepositoryTest {
         page.getTotalElements();
         System.out.println(page);
     }
+
+    @Test
+    public void callCustom() {
+
+    }
 }

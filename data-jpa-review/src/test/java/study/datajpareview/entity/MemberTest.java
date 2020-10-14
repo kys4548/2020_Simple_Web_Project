@@ -71,5 +71,8 @@ class MemberTest {
 
     }
 
-
+    @Test
+    public void transactionTest() {
+        em.persist(new Member("member"));
+    }
 }
