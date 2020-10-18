@@ -4,6 +4,9 @@ import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.QueryResults;
 import com.querydsl.core.Tuple;
 import com.querydsl.core.types.OrderSpecifier;
+import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -298,7 +301,7 @@ public class QuerydslBasicTest {
                 .where(member.age.goe(
                         JPAExpressions
                                 .select(memberSub.age.avg())
-                                .from(member)
+                                .from(memberSub)
                 )).fetch();
     }
 
@@ -308,16 +311,71 @@ public class QuerydslBasicTest {
         Integer ageParam = 10;
 
         List<Member> result = searchMember1(usernameParam, ageParam);
-        assertThat(result.size()).isEqualTo(10);
+        assertThat(result.size()).isEqualTo(1);
     }
 
     private List<Member> searchMember1(String usernameParam, Integer ageParam) {
-        final BooleanBuilder build = new BooleanBuilder();
-        if(user)
+        final BooleanBuilder builder = new BooleanBuilder();
+        if(usernameParam != null) {
+            builder.and(member.username.eq(usernameParam));
+        }
+
+        if(ageParam != null) {
+            builder.and(member.age.eq(ageParam));
+        }
 
         return queryFactory
         .selectFrom(member)
-        .where()
+        .where(builder)
         .fetch();
+    }
+
+    @Test
+    public void whereParam() {
+        String usernameParam = "member1";
+        Integer ageParam = 10;
+
+        List<Member> result = searchMember2(usernameParam, ageParam);
+        assertThat(result.size()).isEqualTo(1);
+    }
+
+    private List<Member> searchMember2(String usernameParam, Integer ageParam) {
+        return queryFactory
+                .selectFrom(member)
+                .where(
+                        usernameEq(usernameParam),
+                        ageEq(ageParam)
+                ).fetch();
+    }
+
+    private BooleanExpression ageEq(Integer ageParam) {
+        return ageParam != null ? member.age.eq(ageParam) : null;
+    }
+
+    private BooleanExpression usernameEq(String usernameParam) {
+        return usernameParam != null ? member.username.eq(usernameParam) : null;
+    }
+
+    private BooleanExpression allEq(String usernameCond, Integer ageCond) {
+        return usernameEq(usernameCond).and(ageEq(ageCond));
+    }
+
+    @Test
+    public void sqlFunction() {
+        queryFactory
+                .select(Expressions.stringTemplate(
+                        "function('replace', {0}, {1}, {2})",
+                        member.username, "member", "M"))
+                .from(member)
+                .fetch();
+    }
+
+    @Test
+    public void sqlFunction2() {
+        queryFactory
+                .select(member.username)
+                .from(member)
+                .where(member.username.eq(member.username.lower()))
+                .fetch();
     }
 }
