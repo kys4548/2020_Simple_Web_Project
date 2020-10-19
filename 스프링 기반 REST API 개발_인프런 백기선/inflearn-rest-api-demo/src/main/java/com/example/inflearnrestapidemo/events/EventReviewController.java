@@ -1,6 +1,5 @@
 package com.example.inflearnrestapidemo.events;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.hateoas.MediaTypes;
@@ -16,18 +15,15 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RestController
 @Slf4j
-@RequestMapping(value = "/api/events")
+@RequestMapping(value = "/api/eventsReview")
 @RequiredArgsConstructor
-public class EventController {
+public class EventReviewController {
 
     private final EventRepository eventRepository;
-    private final ObjectMapper objectMapper;
-
     @PostMapping(produces = MediaTypes.HAL_JSON_VALUE)
-    public ResponseEntity createEvent(@RequestBody EventDto eventDto) {
-        final Event event = objectMapper.convertValue(eventDto, Event.class);
-        final Event newEvent = this.eventRepository.save(event);
-        final URI uri = linkTo(EventController.class).slash(newEvent.getId()).toUri();
-        return ResponseEntity.created(uri).body(newEvent);
+    public ResponseEntity createEvent(@RequestBody Event event) {
+        final Event savedEvent = eventRepository.save(event);
+        final URI uri = linkTo(EventReviewController.class).slash(savedEvent.getId()).toUri();
+        return ResponseEntity.created(uri).body(savedEvent);
     }
 }
