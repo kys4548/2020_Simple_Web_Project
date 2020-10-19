@@ -1,13 +1,13 @@
 package com.example.inflearnrestapidemo.events;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDateTime;
 
-@Data @Builder @NoArgsConstructor @AllArgsConstructor
+@Getter
+@Builder @NoArgsConstructor @AllArgsConstructor
 public class EventDto {
     private String name;
     private String description;
@@ -19,4 +19,6 @@ public class EventDto {
     private int basePrice;
     private int maxPrice;
     private int limitOfEnrollment;
+    @Enumerated(value = EnumType.STRING)
+    private EventStatus eventStatus = EventStatus.DRAFT;
 }

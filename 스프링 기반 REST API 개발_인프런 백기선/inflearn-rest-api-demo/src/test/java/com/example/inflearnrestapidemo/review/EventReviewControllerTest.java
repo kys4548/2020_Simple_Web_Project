@@ -1,5 +1,8 @@
-package com.example.inflearnrestapidemo.events;
+package com.example.inflearnrestapidemo.review;
 
+import com.example.inflearnrestapidemo.events.Event;
+import com.example.inflearnrestapidemo.events.EventRepository;
+import com.example.inflearnrestapidemo.review.EventReviewController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

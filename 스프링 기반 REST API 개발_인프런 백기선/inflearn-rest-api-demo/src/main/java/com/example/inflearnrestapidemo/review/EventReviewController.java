@@ -1,5 +1,7 @@
-package com.example.inflearnrestapidemo.events;
+package com.example.inflearnrestapidemo.review;
 
+import com.example.inflearnrestapidemo.events.Event;
+import com.example.inflearnrestapidemo.events.EventRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.hateoas.MediaTypes;
