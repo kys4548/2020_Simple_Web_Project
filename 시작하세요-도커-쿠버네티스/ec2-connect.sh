@@ -1,3 +1,3 @@
 #! /bin/bash
 
-ssh -i /c/youngsil-docker.pem ubuntu@3.34.178.145 -p12345
+ssh -i /c/youngsil-docker.pem ubuntu@52.78.140.219 -p 12345
