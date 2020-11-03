@@ -1,0 +1,1 @@
+ssh -i /c/Users/a/.ssh/id_rsa a@35.188.110.217
